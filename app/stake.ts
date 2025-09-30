@@ -13,7 +13,7 @@ dotenv.config();
 
 // ---------- CONFIG ----------
 const PROGRAM_ID = new PublicKey("F1JH85HfWhojoEyTPq5jJHqjoEt1hPaSR9QthvCvLs9r"); // from declare_id!
-const MINT = new PublicKey("7QkMEYE8MxjoLVdhXFydW7UBqYyqeDBAh3bBa9PUCTAj"); // the token being staked
+const MINT = new PublicKey(process.env.TOKEN_MINT); // the token being staked
 const WALLET_PATH = process.env.ANCHOR_WALLET ?? `${process.env.HOME}/.config/solana/id.json`;
 // --------------------------------
 
