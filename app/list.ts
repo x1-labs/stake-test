@@ -24,7 +24,6 @@ async function main() {
     const program = anchor.workspace.StakeTest as Program<StakeTest>;
     anchor.setProvider(provider);
 
-
     const allStakes = await program.account.staker.all()
 
     console.log("all stakes:");
