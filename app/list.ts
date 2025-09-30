@@ -27,7 +27,7 @@ async function main() {
     const allStakes = await program.account.staker.all()
 
     console.log("all stakes:");
-    allStakes.forEach(stake => console.log('  ', stake.publicKey.toBase58(), stake.account.total.toNumber()) );
+    allStakes.forEach(stake => console.log('  ', stake.account.owner.toBase58(), stake.account.total.toNumber()) );
 }
 
 main().catch((e) => {
