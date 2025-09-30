@@ -1,8 +1,8 @@
 // stake.ts
 import { readFileSync } from "node:fs";
-import { Keypair, Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
+import { Keypair, PublicKey } from "@solana/web3.js";
 import * as anchor from "@coral-xyz/anchor";
-import {getAssociatedTokenAddressSync, getOrCreateAssociatedTokenAccount} from "@solana/spl-token";
+import {getOrCreateAssociatedTokenAccount} from "@solana/spl-token";
 import BN from "bn.js";
 import {Program} from "@coral-xyz/anchor";
 import {StakeTest} from "../target/types/stake_test";
@@ -33,7 +33,6 @@ async function main() {
     const wallet = new anchor.Wallet(payer);
     anchor.setProvider(provider);
     console.log('User', payer.publicKey.toBase58());
-
 
     // ----------- DERIVATIONS -----------
     const user = payer.publicKey;
